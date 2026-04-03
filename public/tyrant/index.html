@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv">
+
+<head>
+<title>Tricell Laboratories Inc, Åland</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<style>
+#temperature, #humidity, #lightsensitivity
+{
+	width: 250px;
+	height: 30px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	background-color: #cfe7fd;
+	text-align: center;
+	font-weight: bold;
+}
+</style>
+
+<script language="JavaScript">
+var temperature_max=10;
+var temperature_min=7;
+var humidity_max=20;
+var humidity_min=17;
+var lightsensitivity_max=210;
+var lightsensitivity_min=196;
+function updateValues()
+{
+
+	let temperature = Math.floor(Math.random() * (temperature_max - temperature_min + 1) + temperature_min);
+	let humidity = Math.floor(Math.random() * (humidity_max - humidity_min + 1) + humidity_min);
+	let lightsensitivity = Math.floor(Math.random() * (lightsensitivity_max - lightsensitivity_min + 1) + lightsensitivity_min);
+	
+	document.getElementById("temperature").innerHTML = temperature;
+	document.getElementById("humidity").innerHTML = humidity;
+	document.getElementById("lightsensitivity").innerHTML = lightsensitivity;
+}
+</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/mgGlitch.min.js"></script>
+
+<script language="JavaScript">
+$(function(){
+  $(".glitch-img").mgGlitch({
+    destroy: false,
+    glitch: true,
+    scale: true,
+    blend: true,
+    blendModeType: 'hue',
+    glitch1TimeMin: 200,
+    glitch1TimeMax: 400,
+    glitch2TimeMin: 10,
+    glitch2TimeMax: 100,
+  });
+});
+</script>
+
+</head>
+
+<body bgcolor="#ffffff" link="#ffffff" vlink="#ffffff" alink="#aad037" onLoad="setInterval(updateValues,2000)">
+
+<!------------------------- Header start ------------------------------>
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td colspan="2" height="30"><!-- Avståndet uppåt --></td>
+  <td rowspan="2" width="330" valign="bottom" align="center">
+
+	<!-- Sociala-medier start -->
+	<!-- Sociala-medier slut -->
+
+  </td>
+  <td rowspan="2" width="180" valign="bottom" align="right">
+
+	<!-- Kontaktuppgifter start -->
+	<!-- Kontaktuppgifter slut -->
+
+  </td>
+ </tr>
+ <tr>
+  <td width="50"><!-- Avståndet till vänster --></td>
+  <td width="293" height="90"><img src="images/logo.gif" alt="Tricell Laboratories" /></td>
+ </tr>
+ <tr>
+  <td colspan="4" height="30"><!-- Avståndet neråt --></td>
+ </tr>
+</table>
+<!------------------------- Header slut ------------------------------>
+
+<!------------------------- Meny start ------------------------------>
+<!------------------------- Meny slut ------------------------------>
+
+<!------------------------- Info start ------------------------------>
+
+<!-- Info-tabell start -->
+<table border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td width="110"><!-- Avståndet till vänster --></td>
+  <td width="1" bgcolor="#000000"><!-- Svart 1px V-ram --></td>
+  <td width="756" background="images/tablebg.gif">
+
+	<!-- Mellan-tabell start -->
+	<table border="0" cellspacing="0" cellpadding="0">
+	 <tr>
+	  <td colspan="4" height="1" bgcolor="#000000"><!-- Svart 1px V-ram --></td>
+	 </tr>
+	 <tr>
+	  <td colspan="4" height="20" width="756"><!-- Avståndet till uppåt --></td>
+	 </tr>
+	 <tr>
+	  <td width="20"><!-- Avståndet till vänster --></td>
+	  <td width="756" valign="top">
+
+
+	<table border="0" cellspacing="0" cellpadding="0">
+	 <tr>
+	  <td width="400" valign="top">
+
+		<img src="images/screen.png" alt="Tyrant" style="position:absolute;z-index:10;padding:5px;" />
+		<div class="container">
+		  <img class="glitch-img" src="images\tyrant.jpg" alt="image" />
+		</div>
+		<br />&nbsp;<br />
+
+	  </td>
+	  <td width="20"></td>
+	  <td width="336" valign="top">
+		<font size="3" face="arial" color="#000000"><b>TCL #2 - Tyrant</b>
+		<br />&nbsp;<br />
+		Temperature <10 C :<br />
+		<div id="temperature">10 </div>
+		Humidity <20% :<br />
+		<div id="humidity">19 </div>
+		Light sensitivity <210 Lumen :<br />
+		<div id="lightsensitivity">209 </div>
+		</font>
+	  </td>
+	 </tr>
+	</table>
+
+
+	  </td>
+	  <td width="20"><!-- Avstånd till höger --></td>
+	 </tr>
+	 <tr>
+	  <td colspan="3" height="1" bgcolor="#000000"><!-- Svart 1px H-ram --></td>
+	 </tr>
+	</table>
+	<!-- Mellan-tabell slut -->
+
+ </td>
+  <td width="1" bgcolor="#000000"><!-- Svart 1px V-ram --></td>
+ </tr>
+  <td colspan="4" height="20"><!-- Avstånd neråt --></td>
+ </tr>
+</table>
+<!-- Info-tabell slut -->
+
+<!------------------------- Info slut ------------------------------>
+
+</body>
+</html>

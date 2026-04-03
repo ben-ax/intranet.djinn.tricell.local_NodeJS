@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv">
+
+<head>
+<title>Tricell Laboratories Inc, Åland</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<style>
+#temperature, #humidity, #lightsensitivity
+{
+	width: 250px;
+	height: 30px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	background-color: #cfe7fd;
+	text-align: center;
+	font-weight: bold;
+}
+</style>
+
+<script language="JavaScript">
+var temperature_max=12;
+var temperature_min=10;
+var humidity_max=20;
+var humidity_min=17;
+var lightsensitivity_max=150;
+var lightsensitivity_min=145;
+function updateValues()
+{
+
+	let temperature = Math.floor(Math.random() * (temperature_max - temperature_min + 1) + temperature_min);
+	let humidity = Math.floor(Math.random() * (humidity_max - humidity_min + 1) + humidity_min);
+	let lightsensitivity = Math.floor(Math.random() * (lightsensitivity_max - lightsensitivity_min + 1) + lightsensitivity_min);
+	
+	document.getElementById("temperature").innerHTML = temperature;
+	document.getElementById("humidity").innerHTML = humidity;
+	document.getElementById("lightsensitivity").innerHTML = lightsensitivity;
+}
+</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/mgGlitch.min.js"></script>
+
+<script language="JavaScript">
+$(function(){
+  $(".glitch-img").mgGlitch({
+    destroy: false,
+    glitch: true,
+    scale: true,
+    blend: true,
+    blendModeType: 'hue',
+    glitch1TimeMin: 200,
+    glitch1TimeMax: 400,
+    glitch2TimeMin: 10,
+    glitch2TimeMax: 100,
+  });
+});
+</script>
+
+</head>
+
+<body bgcolor="#ffffff" link="#ffffff" vlink="#ffffff" alink="#aad037" onLoad="setInterval(updateValues,2000)">
+
+		<img src="images/screen.png" alt="T-Veronica" style="position:absolute;z-index:10;padding:5px;" />
+		<div class="container">
+		  <img class="glitch-img" src="images\t-veronica.jpg" alt="image" />
+		</div>
+
+</body>
+</html>
