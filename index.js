@@ -1,10 +1,11 @@
-/* ----------------------------- 3:rd party-moduler ------------------------------ */
+/* ----------------------------- 3:rd party-moduler------------------------------ */
 const config = require('./config/globals.json');
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();                  /* Skapa webbserver-objektet */
+
 
 app.use(express.static('./public'));    /* Skapa global path till "public"-mappen */
 app.set('views', path.join(__dirname, 'views'));
