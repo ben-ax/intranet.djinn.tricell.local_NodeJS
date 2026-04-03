@@ -1,0 +1,18 @@
+{
+"fields": {
+		"employeeCode": "ITXX-04",
+		"name": "Ironman",
+		"signatureDate": "23.8.2022",
+		"dateOfBirth": "29.02.1958",
+		"sex": "M",
+		"bloodType": "A",
+		"height": "191 cm",
+		"weight": "107 kg",
+		"rank": "Lead Data Analyst",
+		"securityAccessLevel": "A",
+		"department": "System Center Department",
+		"background": "Tony Stark is the wealthy son of industrialist and weapons manufacturer Howard Stark and his wife, Maria. Tony grew up a genius with a brilliant mind for technology and inventions and, naturally, followed in his father’s footsteps, inheriting Stark Industries upon his parents’ untimely death. Tony designed many weapons of war for Stark Industries, far beyond what any other company was creating, while living the lifestyle of a bon vivant.\n \nFate would take a dark turn for Tony Stark once he decided to consult on a weapons contract overseas in enemy terrain. An improvised explosive device exploded underneath Tony’s transport, and he was brought to the brink of death.",
+		"strengths": "The primary weapon contained within every suit, the repulsor rays use energy pulses to repel and disrupt enemies and are generated through the suit’s gauntlets. The suit’s booster jets enable Stark to fly fast enough to break the sound barrier, and maneuver more quickly than any fighter jet.\n \nIron Man’s helmet provides Tony with a heads-up display that gives him 360-degree vision, access to information about his surroundings and enemies, and the ability to transmit and block transmissions along any frequency. The helmet also gives Tony a degree of resistance to EMP and psychic-based attacks.\n \nA weapon centered in Iron Man’s chest, the unibeam is capable of projecting dazzling light, and can also be used as a powerful force beam that is even more powerful than the repulsor ray.",
+		"weaknesses": "Iron Man can’t always fight alone and has many notable allies and teammates. Stark is one of the founding members of the Avengers and is considered one of the “Big Three” core members, along with Thor and Captain America. While he has left the team at various points for personal reasons, he has always returned to fight alongside them again and again. He is one Avenger that can always be counted on.\n \nOriginally, Tony’s secretary Pepper Potts and limousine driver Happy Hogan grew to be Tony’s two best friends in the world. A romance between Pepper and Tony fizzled out, but she and Happy found happiness together for a time, until his tragic death. More recently, Pepper has taken up occasional super heroics herself, with an armored suit Tony has created for her called Rescue."
+	}
+}

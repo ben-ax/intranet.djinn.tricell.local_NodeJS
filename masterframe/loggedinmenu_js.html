@@ -1,0 +1,138 @@
+<script language="JavaScript">
+    function showCalcLayer()
+    {
+        if(document.getElementById('calcLayer').style.display=='block')
+        {
+            document.getElementById('calcLayer').style.display='none';
+        }
+        else
+        {
+            document.getElementById('calcLayer').style.display='block';
+        }
+    }
+    </script>
+    
+    <script language="JavaScript">
+    function resetDisplay()
+    {
+        document.calc.display.value = "";
+    }
+    function updateDisplay(invalue)
+    {
+        document.calc.display.value = document.calc.display.value + invalue;
+    }
+    function calculate()
+    {
+        document.calc.display.value = eval(document.calc.display.value);
+    }
+    </script>
+    
+    <script language="JavaScript">
+    function refreshChat()
+    {
+    const xhttp2 = new XMLHttpRequest();
+    xhttp2.onload = function() 
+    {
+       document.getElementById("chatLayerMessages").innerHTML = this.responseText;
+        var elem = document.getElementById('chatLayer');
+        elem.scrollTop = elem.scrollHeight;
+    }
+    const baseUrl = window.location.protocol + "//" + window.location.host;
+    xhttp2.open("GET", baseUrl + "/api/chat", true);
+    xhttp2.send()
+    }
+    function showChatLayer()
+    {
+        if(document.getElementById('chatLayer').style.display=='block')
+        {
+            document.getElementById('chatLayer').style.display='none';
+        }
+        else
+        {
+            document.getElementById('chatLayer').style.display='block';
+            refreshChat();
+            setInterval(function() 
+            {
+                refreshChat();
+            }, 5000); //5 seconds
+        }
+    }
+    function submitChat()
+    {
+        var http = new XMLHttpRequest();
+        const baseUrl = window.location.protocol + "//" + window.location.host;
+        http.open("POST", baseUrl + "/api/chat", true);
+        http.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        var params = "MAX_FILE_SIZE=50000000&chatmessage=" + document.getElementById('chatmessage').value;
+        http.send(params);
+        http.onload = function() 
+        {
+            document.getElementById("chatmessage").value = this.responseText;
+        }
+    }
+    </script>
+    
+    <script language="JavaScript">
+    function loadChat()
+    {
+        const xhttp = new XMLHttpRequest();
+        setInterval(function() 
+        {
+           xhttp.onload = function() 
+           {
+                document.getElementById("chatnumber").innerHTML = this.responseText;
+           }
+           const baseUrl = window.location.protocol + "//" + window.location.host;
+           xhttp.open("GET", baseUrl + "/api/getchat", true);
+           xhttp.send();
+        }, 3000); //3 seconds
+    }
+    </script>
+
+    <!-- PANIC BUTTON SCRIPTS -->
+    <script language="JavaScript">
+    function showPanicLayer()
+    {
+        if(document.getElementById('panicLayer').style.display=='block')
+        {
+            document.getElementById('panicLayer').style.display='none';
+        }
+        else
+        {
+            document.getElementById('panicLayer').style.display='block';
+            document.getElementById('panicresult').innerHTML = '';
+            document.getElementById('paniccode').value = '';
+        }
+    }
+
+    function submitPanic()
+    {
+        var code = document.getElementById('paniccode').value;
+
+        if(code == '')
+        {
+            document.getElementById('panicresult').innerHTML = 'Enter panic code';
+            return;
+        }
+
+        var hashedCode = hex_md5(code);
+
+        var http = new XMLHttpRequest();
+        const baseUrl = window.location.protocol + "//" + window.location.host;
+        http.open("POST", baseUrl + "/api/panic", true);
+        http.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        http.send("paniccode=" + encodeURIComponent(hashedCode));
+
+        http.onload = function()
+        {
+            document.getElementById('panicresult').innerHTML = this.responseText;
+
+            if(this.responseText.includes("activated"))
+            {
+                setTimeout(function() {
+                    window.location.href = baseUrl;
+                }, 2000);
+            }
+        }
+    }
+    </script>

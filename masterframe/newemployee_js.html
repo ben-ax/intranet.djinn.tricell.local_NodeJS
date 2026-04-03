@@ -1,0 +1,48 @@
+<script language="JavaScript">
+function formCheckNewEmployee()
+{
+	if(document.newemployeeform.femployeecode.value=="" || document.newemployeeform.femployeecode.value.indexOf("-") == -1)
+	{
+       		alert("You have to give an Employee Code");
+	        return false;
+	}
+	if(document.newemployeeform.fname.value=="")
+	{
+       		alert("You must give a name!");
+	        return false;
+	}
+    if(document.newemployeeform.fbloodtype.value=="")	{ alert("You must give a blood type!"); return false; }
+	if(document.newemployeeform.fheight.value=="" || document.newemployeeform.fheight.value.indexOf("cm") == -1)	{ alert("You must give a height in cm!"); return false; }
+	if(document.newemployeeform.fweight.value=="" || document.newemployeeform.fweight.value.indexOf("kg") == -1)	{ alert("You must give a weight in kg!"); return false; }
+	if(document.newemployeeform.fdepartment.value=="")	{ alert("You must give a department!"); return false; }
+	if(document.newemployeeform.frank.value=="")	{ alert("You must give a rank!"); return false; }
+	if(document.newemployeeform.fbackground.value=="")	{ alert("You must give a backbround!"); return false; }
+	if(document.newemployeeform.fstrengths.value=="")	{ alert("You must give strengths!"); return false; }
+	if(document.newemployeeform.fweaknesses.value=="")	{ alert("You must give weaknesses!"); return false; }
+	var temp = document.newemployeeform.ffile.value;
+	var filename = temp.substring(temp.lastIndexOf('\\')+1,temp.length);
+	if(temp!="")
+	{
+		if (temp.substring(temp.lastIndexOf("."),temp.length) != ".jpg")
+	        {
+	       		alert("Endast bilder i jpg-format!");
+		        return false;
+	        }
+		if (filename.indexOf(' ') != -1)
+	        {
+       			alert("Inga mellanslag i filnamnet!");
+	        	return false;
+	        }
+		if (filename.indexOf('ä') != -1 || filename.indexOf('å') != -1 || filename.indexOf('ö') != -1)
+        	{
+	       		alert("Inga åäö i filnamnet!");
+		        return false;
+	        }
+		if (filename.indexOf('Å') != -1 || filename.indexOf('Ä') != -1 || filename.indexOf('Ö') != -1)
+	        {
+	       		alert("Inga ÅÄÖ i filnamnet!");
+		        return false;
+	        }
+	}
+}
+</script>

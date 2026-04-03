@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN” "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv">
+
+<head>
+<title>Tricell Laboratories Inc, Åland</title>
+<base href="/">
+
+<script language="JavaScript" type="text/javascript" src="scripts/leftmenu.js"></script>
+<script language="JavaScript" src="scripts/MD5.js"></script>
+
+<script language="JavaScript">
+	let keys = {t: false, r: false};
+
+    addEventListener("keydown", (event) => 
+	{
+      if (event.key === "t") 
+	  {
+        keys.t = true;
+      }
+      if (event.key === "r") 
+	  {
+        keys.r = true;
+      }
+	if(keys.t && keys.r)
+	{
+		document.getElementById("loginLayer").style.display = "block";
+    }
+    });
+
+    addEventListener("keyup", (event) => 
+	{
+      if (event.key === "t") {
+        keys.t = false;
+      }
+      if (event.key === "r") {
+        keys.r = false;
+      }
+    });
+
+	document.addEventListener("keydown", event => 
+	{ 
+		if (event.key == "Escape") 
+		{
+			document.getElementById("loginLayer").style.display = "none";
+		}
+	});
+
+	function hashing()
+	{
+		document.form.fpassword.value = hex_md5(document.form.fpassword.value);
+	}
+
+	function formCheck()
+	{
+		if(document.form.femployeecode.value=="")
+		{
+				   alert("You must give an employee code!");
+				return false;
+		}
+		if(document.form.fpassword.value=="")
+		{
+				   alert("You must give a password!");
+				return false;
+		}
+	}
+</script>
+
+<link rel="stylesheet" href="css/index.css" /><!-- Gemensam CSS -->
+<link rel="stylesheet" href="css/leftmenu.css" />
+<link rel="stylesheet" href="css/personnel_registry.css" />
+
+<!-- Egna CSS-definitioner som berör endast denna sida -->
+<style type="text/css">
+	#loginLayer 
+	{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 10;
+		background-color: #98e6b2;
+		width: 250px;
+		padding: 10px;
+		border: #294e13 2px dashed;
+		display: none;
+	}
+	input[type=text], input[type=date] , input[type=file], select, textarea, input[type=password]
+	{
+		padding: 5px 5px;
+		box-sizing: border-box;
+		border: 1px solid black;
+		background-color : #d7ecff; 
+		font-size: 16px;
+	}
+	input[type="file"]
+	{
+		color: transparent;
+		width: 166px;
+	}
+	select option 
+	{
+		margin: 40px;
+		background: rgba(0, 0, 0, 0.3);
+		color: #fff;
+		font-size: 16px;
+		text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+	}
+	</style>
+
+</head>
+
+<body onload="loadChat()">
+
+<!------------------------- Left-menu start ------------------------------>
+<div id="leftsidebar" class="sidebar">
+	<a href="javascript:void(0)" class="closemenubutton" onclick="closeMenu()">x</a>
+	<b><a href="/api/info/company_presentation">Company Presentation</a></b>
+	<a href="/api/info/pharmaceutical_research">1. Pharmaceutical Research</a>
+	<a href="/api/info/natural_resources">2. Natural Resources</a>
+	<a href="/api/info/shipping">3. Shipping</a>
+	<p />
+	<b><a href="/api/info/history">History</a></b>
+	<p />
+	<b><a href="/api/info/headquarters">Headquarters</a></b>
+	<a href="/api/info/board_of_directors">Board of Directors</a>
+	<a href="/api/info/internations_suppliers">International Suppliers</a>
+	<a href="/api/info/kijuju_laboratory">Kijuju Laboratory</a>
+	<a href="/api/info/mariehamn_data_lab">Mariehamn Data Lab</a>
+	<p />
+	<b><a href="/api/info/personnel_registry">Personnel Registry</a></b>
+</div>
+<!------------------------- Left-menu slut ------------------------------>
+
+<!---------------------Hidden login-prompt start------------------------->
+<div id="loginLayer">
+	<big><strong>Login to Tricell Laboratories:</strong></big>
+	<form name="form" action="/api/login" onSubmit="return formCheck()"  method="get">
+		<p />
+		Employee Code: <input type="text" name="femployeecode" id="femployeecode" size="7" maxlength="7" />
+		<p />
+		Password: <input type="password" name="fpassword" id="fpassword" size="7" maxlength="7" />
+		<p />
+		<input type="submit" class="button" value="Login" onClick="javascript:hashing()" /><input class="button" type="reset" value="Reset Form" />
+		<p />
+	</form>
+</div>
+<!---------------------Hidden login-prompt slut ------------------------->

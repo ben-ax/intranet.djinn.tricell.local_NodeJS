@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<personnelRegistry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<employee>
+		<employeeCode>ITXX-01</employeeCode>
+		<name>Hulk</name>
+		<signatureDate>23.8.2022</signatureDate>
+		<dateOfBirth>18.12.1966</dateOfBirth>
+		<sex>M</sex>
+		<bloodType>0-</bloodType>
+		<height>238cm</height>
+		<weight>380kg</weight>
+		<rank>Lead Data Analyst</rank>
+		<securityAccessLevel>A</securityAccessLevel>
+		<department>System Center Department</department>
+		<background>Bruce Banner was born to Dr. Brian Banner and his wife Rebecca. Brian was an alcoholic father whose jealousy grew for Bruce as Rebecca shifted her focus from Brian to Bruce,Further, Brian believed that his radiation work had altered his DNA and given him a mutant son. Brian then abused Bruce and finally murdered Rebecca, then was placed in a mental hospital. After that, Bruce was raised by his aunt and father's sister, Susan Banner, who understood his great pain and rage over his childhood sufferings thanks to his crazed father, and raised him with love and care as if he were her own child.
+ 
+Eventually when he became an adult he was a genius in nuclear physics, but without the proper funding, he was forced to go to the Desert State University. While performing a Gamma Bomb test until he saw a random civilian, so he asked his assistant Igor to stop the bomb, however because Igor was with the Soviet Union, he refused. Bruce was able to find a place to protect the bystander however he wasn't able to get back to his former location when the Gamma Bomb went off.
+ 
+Somehow, Bruce survived the explosion thanks to a genetic factor in his body. This factor allowed Bruce to absorb the gamma radiation and after that night, he would frequently transform into the Green Goliath, also known as the Hulk.</background>
+		<strengths>Gamma Radiation Physiology: Due to Bruce Banner being exposed to the Gamma Bomb's radiation culminating in his transformation into a powerful monster, The Incredible Hulk was for several times described as one of the physically most powerful beings in the entire Marvel Universe, with the potential for limitless levels of strength and durability (which scales directly with his strength). The Hulk, in the full exercise of his potential, was described as the most powerful regular humanoid, and his maximum known strength level ranges beyond the limits of virtually any other known humanoid being. The gamma radiation mutated his body and fortified his cellular structure, adding over 800 lbs of bone marrow and muscle tissues to his body. Additionally, during times of stress the Hulk's adrenaline level escalates, causing a corresponding escalation of brute strength. Thus, the madder Hulk gets, the stronger Hulk gets. Moreover, the Hulk was stated to be an Omega Level Threat by both the Initiative and Mister Fantastic, and even "the Original Omega Level Threat" by Gyrich. At one point, the Hulk was stated to be the strongest hero in the world.
+ </strengths>
+		<weaknesses>Gamma Radiation Draining: The Hulk is sometimes portrayed as vulnerable to gamma radiation draining by sufficiently powerful energy manipulators. Reverting to human form may be necessary for the Hulk to recharge his gamma energy. However, the Hulk is eventually characterized as possessing high degree of immunity to this weakness. For example, the mutant Darwin was unable to drain his gamma radiation, and Hulk deliberately transferred his energy into an entire race of absorbing entities without collapsing. Even previous to these events the Hulk has displayed this potential. For example, the hero Rom was unable to cure Banner from his condition, and the Hulk intentionally overloaded the Armageddon absorption mechanism.
+ </weaknesses>
+	</employee>
+	<employee>
+		<employeeCode>ITXX-02</employeeCode>
+		<name>Grimlock</name>
+		<signatureDate>23.8.2022</signatureDate>
+		<dateOfBirth>1985</dateOfBirth>
+		<sex>M</sex>
+		<bloodType>5W-30</bloodType>
+		<height>12,6 m</height>
+		<weight>24 ton</weight>
+		<rank>Lead Data Analyst</rank>
+		<securityAccessLevel>A</securityAccessLevel>
+		<department>System Center Department</department>
+		<background>Grimlock is an ego-maniacal, impatient and willful Autobot. As he's more than willing to disobey any direct order if he thinks that the ends will justify his means. He gets anger issues if anyone dares to tick him off, they're scrap. Despite that, he is loyal to the Autobot cause and is willing to risk his life to rescue his comrades from capture.
+ 
+During Shockwave's experimentation on him, Grimlock gained a new "Alt Mode", making him more aggressive than ever. Grimlock's speech patterns hide's a surprisingly intelligent mind.
+ 
+Grimlock is known for not following orders or trusting in Optimus Prime's ability to be an effective leader. As the leader of the Lightning Strike Coalition Force, Grimlock enjoys smashing things first and asking questions later. Due to Shockwave's experiments, Grimlock has been left with a malfunctioning voice processor and an alt-mode inspired by a distant primitive world.</background>
+		<strengths>Physically, Grimlock is one of the strongest Cybertronians alive, he has accomplished amazing feats using his berserk, monstrous strength, he has pushed down towers with ease, break through steel walls, single-handedly took down an army of Decepticons, was able to go one-on-one with Megatron, smash boulders with his bare hands. There are some rumors that Grimlock's strength is limitless, he might even overpower Unicron, his rage also fuels him with might, the angrier he becomes, the stronger he gets. He is also equipped with an Energy Sword (Flame Swords in different media).
+ 
+In his Dinobot/T-Rex Mode, Grimlock's strength is somewhat stronger than his Cybertronian Form, his jaws are so powerful, he can bite through virtually anything (unknown if he can actually bite through the apex armor), Grimlock can also eat Decepticons up (though it does not power him up like Chompazoids do). His T-Rex mode also has the ability to breath fire, the fire that Grimlock breathes is so hot, it can burn buildings from miles away, this flame can also burn Decepticons down.</strengths>
+		<weaknesses>His lack of fear makes him a dangerous foe, he loves to fight, often he starts one, he isn't afraid to fight either Bruticus or Devastator. But his berserk-like anger makes him too dangerous to other Autobots as well, (as stated by some Autobots that "In the battlefield, better fear Grimlock than the hoard of Decepticons around you").</weaknesses>
+	</employee>
+	<employee>
+		<employeeCode>ITXX-03</employeeCode>
+		<name>Professor Chaos</name>
+		<signatureDate>23.8.2022</signatureDate>
+		<dateOfBirth>13.08.1997</dateOfBirth>
+		<sex>M</sex>
+		<bloodType>AB+</bloodType>
+		<height>137 cm</height>
+		<weight>34 kg</weight>
+		<rank>Lead Data Analyst</rank>
+		<securityAccessLevel>A</securityAccessLevel>
+		<department>System Center Department</department>
+		<background>Bruce Banner was born to Dr. Brian Banner and his wife Rebecca. Brian was an alcoholic father whose jealousy grew for Bruce as Rebecca shifted her focus from Brian to Bruce,Further, Brian believed that his radiation work had altered his DNA and given him a mutant son. Brian then abused Bruce and finally murdered Rebecca, then was placed in a mental hospital. After that, Bruce was raised by his aunt and father's sister, Susan Banner, who understood his great pain and rage over his childhood sufferings thanks to his crazed father, and raised him with love and care as if he were her own child.
+ 
+Eventually when he became an adult he was a genius in nuclear physics, but without the proper funding, he was forced to go to the Desert State University. While performing a Gamma Bomb test until he saw a random civilian, so he asked his assistant Igor to stop the bomb, however because Igor was with the Soviet Union, he refused. Bruce was able to find a place to protect the bystander however he wasn't able to get back to his former location when the Gamma Bomb went off.
+ 
+Somehow, Bruce survived the explosion thanks to a genetic factor in his body. This factor allowed Bruce to absorb the gamma radiation and after that night, he would frequently transform into the Green Goliath, also known as the Hulk.</background>
+		<strengths>Gamma Radiation Physiology: Due to Bruce Banner being exposed to the Gamma Bomb's radiation culminating in his transformation into a powerful monster, The Incredible Hulk was for several times described as one of the physically most powerful beings in the entire Marvel Universe, with the potential for limitless levels of strength and durability (which scales directly with his strength). The Hulk, in the full exercise of his potential, was described as the most powerful regular humanoid, and his maximum known strength level ranges beyond the limits of virtually any other known humanoid being. The gamma radiation mutated his body and fortified his cellular structure, adding over 800 lbs of bone marrow and muscle tissues to his body. Additionally, during times of stress the Hulk's adrenaline level escalates, causing a corresponding escalation of brute strength. Thus, the madder Hulk gets, the stronger Hulk gets. Moreover, the Hulk was stated to be an Omega Level Threat by both the Initiative and Mister Fantastic, and even "the Original Omega Level Threat" by Gyrich. At one point, the Hulk was stated to be the strongest hero in the world.
+ </strengths>
+		<weaknesses>Gamma Radiation Draining: The Hulk is sometimes portrayed as vulnerable to gamma radiation draining by sufficiently powerful energy manipulators. Reverting to human form may be necessary for the Hulk to recharge his gamma energy. However, the Hulk is eventually characterized as possessing high degree of immunity to this weakness. For example, the mutant Darwin was unable to drain his gamma radiation, and Hulk deliberately transferred his energy into an entire race of absorbing entities without collapsing. Even previous to these events the Hulk has displayed this potential. For example, the hero Rom was unable to cure Banner from his condition, and the Hulk intentionally overloaded the Armageddon absorption mechanism.
+ </weaknesses>
+	</employee>
+	<employee>
+		<employeeCode>ITXX-04</employeeCode>
+		<name>Ironman</name>
+		<signatureDate>23.8.2022</signatureDate>
+		<dateOfBirth>29.02.1958</dateOfBirth>
+		<sex>M</sex>
+		<bloodType>A</bloodType>
+		<height>191 cm</height>
+		<weight>107 kg</weight>
+		<rank>Lead Data Analyst</rank>
+		<securityAccessLevel>A</securityAccessLevel>
+		<department>System Center Department</department>
+		<background>Tony Stark is the wealthy son of industrialist and weapons manufacturer Howard Stark and his wife, Maria. Tony grew up a genius with a brilliant mind for technology and inventions and, naturally, followed in his father’s footsteps, inheriting Stark Industries upon his parents’ untimely death. Tony designed many weapons of war for Stark Industries, far beyond what any other company was creating, while living the lifestyle of a bon vivant.
+ 
+Fate would take a dark turn for Tony Stark once he decided to consult on a weapons contract overseas in enemy terrain. An improvised explosive device exploded underneath Tony’s transport, and he was brought to the brink of death.</background>
+		<strengths>The primary weapon contained within every suit, the repulsor rays use energy pulses to repel and disrupt enemies and are generated through the suit’s gauntlets. The suit’s booster jets enable Stark to fly fast enough to break the sound barrier, and maneuver more quickly than any fighter jet.
+ 
+Iron Man’s helmet provides Tony with a heads-up display that gives him 360-degree vision, access to information about his surroundings and enemies, and the ability to transmit and block transmissions along any frequency. The helmet also gives Tony a degree of resistance to EMP and psychic-based attacks.
+ 
+A weapon centered in Iron Man’s chest, the unibeam is capable of projecting dazzling light, and can also be used as a powerful force beam that is even more powerful than the repulsor ray.</strengths>
+		<weaknesses>Iron Man can’t always fight alone and has many notable allies and teammates. Stark is one of the founding members of the Avengers and is considered one of the “Big Three” core members, along with Thor and Captain America. While he has left the team at various points for personal reasons, he has always returned to fight alongside them again and again. He is one Avenger that can always be counted on.
+ 
+Originally, Tony’s secretary Pepper Potts and limousine driver Happy Hogan grew to be Tony’s two best friends in the world. A romance between Pepper and Tony fizzled out, but she and Happy found happiness together for a time, until his tragic death. More recently, Pepper has taken up occasional super heroics herself, with an armored suit Tony has created for her called Rescue.</weaknesses>
+	</employee>
+	<employee>
+		<employeeCode>ITXX-05</employeeCode>
+		<name>Gargamel</name>
+		<signatureDate>23.8.2022</signatureDate>
+		<dateOfBirth>31.10.1958</dateOfBirth>
+		<sex>M</sex>
+		<bloodType>RED</bloodType>
+		<height>187 cm</height>
+		<weight>65 kg</weight>
+		<rank>Lead Data Analyst</rank>
+		<securityAccessLevel>A</securityAccessLevel>
+		<department>System Center Department</department>
+		<background>Unlike his cartoon show counterpart, his first encounter with the Smurfs was five years prior to Empath's final return to the Smurf Village, when Gargamel sought to capture a Smurf to complete the formula for the creation of the Philosopher's Stone. The Smurfs, after finding out from Brainy Smurf that Nabby was the Smurf captured by Gargamel, had staked out the wizard's castle in order to find a way to break Nabby out of his cage before sunrise. However, as all the Smurfs' attempts to free Nabby before that time came to nothing, they resorted to attacking Gargamel directly until he fell unconscious, allowing them to escape to the village with Nabby. Gargamel, upon awakening, tried to use a formula that he thought would turn him into a giant in order to find the Smurfs, but instead the formula shrank him to Smurf-size, making him realize that the Smurfs had switched the contents of his bottles.</background>
+		<strengths>Gargamel is a very competent if not masterful sorcerer and alchemist who is fully capable of creating all sorts of inventions for capturing and potentially destroying Smurfs. For inventions that are beyond his own abilities to create, he usually turns to the Great Book Of Spells for assistance, though it rarely gives him exactly what he wants, nor does what he gets ever works out in his favor.</strengths>
+		<weaknesses>Gargamel is usually done in by the very inventions and spells that he uses against the Smurfs. He is also rather powerless against the mindlink that Empath uses in conjunction with the Smurfs against him.
+ </weaknesses>
+	</employee>
+	<employee>
+		<employeeCode>ITXX-06</employeeCode>
+		<name>Cara Dune</name>
+		<signatureDate>23.8.2022</signatureDate>
+		<dateOfBirth>14.06.1993</dateOfBirth>
+		<sex>F</sex>
+		<bloodType>C</bloodType>
+		<height>173 cm</height>
+		<weight>380kg</weight>
+		<rank>Lead Data Analyst</rank>
+		<securityAccessLevel>A</securityAccessLevel>
+		<department>System Center Department</department>
+		<background>Carasynthia "Cara" Dune was a human female Alderaanian who was a seasoned warrior and a marshal of the New Republic. She had previous military experience, having once been shock trooper in the Alliance to Restore the Republic during the Galactic Civil War, and was an intimidating brawler and a crack shot. She left the Alliance as it politically reformed into the New Republic and became a mercenary for hire. Dune was later hired by Greef Karga on Nevarro, before rising to become a marshal of the New Republic.
+ 
+Dune was from Alderaan and was off-world when it was destroyed by the Galactic Empire using the DS-1 Death Star Mobile Battle Station. She joined the Rebel Alliance during the Galactic Civil War and began hunting down warlords after the Battle of Endor. However, her duties changed and she began escorting delegates and suppressing riots, causing her to resign from the Alliance and go into early retirement.</background>
+		<strengths>A seasoned warrior[2] who had served as a rebel shock trooper,[3] Dune was a crack shot with a blaster and an intimidating brawler.[2] Highly skilled in hand-to-hand combatant, she was able to fight Din Djarin, an accomplished fighter in his own right, to a standstill during their first encounter.[3] Later, Dune fought a male Zabrak in a tavern on Sorgan, overpowering him and causing him to tap out. Her height sometimes belied her true strength, which she demonstrated by holding Djarin in an arm wrestling contest, confidently stating that he could not beat her.[11] During their first encounter, Dune was able to knock him to the ground with a single blow to his helmet.[3]</strengths>
+		<weaknesses>Carasynthia Dune was a woman with shoulder-length and partially braided black hair, brown eyes, and a light skin tone.[2] She was 1.73 meters tall[4] with a muscular build. The tattoo of the Rebel starbird under her left eye was called a tear, by which she was recognized as a survivor of Alderaan.[16]
+ 
+Not wanting to protect delegates or suppress riots, citing that it was not what she joined the rebellion for, Dune left the New Republic,[3] moved past her days of military discipline, and reinvented herself as a mercenary.[2] The destruction of her homeworld by the Empire left her with a virulent hatred of Imperials, to the extent that she immediately agreed to take part in a plan to kill the Client upon being informed that he was an Imperial, despite having repeatedly declined prior to learning that detail.[11] She was also unwilling to be captured by Moff Gideon, fearing the punishment that the Imperial remnant would inflict upon her. When Karga offered her a place in the Bounty Hunters' Guild, she expressed clerical concerns about her chain code, though Karga revealed they would be of no worry if she became his enforcer.[1]
+ 
+Dune kept her emotions and personal feelings tightly under control, but the loss of her homeworld remained an open and sore wound.[16] When confronted by Carson Teva on Nevarro over whether she lost family there, Cara bitterly told him she lost "everyone."[7] When she rejoined military service as a marshal of the New Republic she was initially reluctant to do anything that would constitute an abuse of that position and power, she relented in the interest of saving Grogu and for another shot at the Empire.[12][15][16]</weaknesses>
+	</employee>
+	<employee>
+		<employeeCode>ITXX-07</employeeCode>
+		<name>Darkwing Duck</name>
+		<signatureDate>23.8.2022</signatureDate>
+		<dateOfBirth>31.03.1991</dateOfBirth>
+		<sex>M</sex>
+		<bloodType>B+</bloodType>
+		<height>112 cm</height>
+		<weight>48 kg</weight>
+		<rank>Lead Data Analyst</rank>
+		<securityAccessLevel>A</securityAccessLevel>
+		<department>System Center Department</department>
+		<background>Darkwing Duck (real name Drake Mallard) is the titular protagonist of the 1991-1992 cartoon series of the same name and tries to protect his city from a number of villains. He is a parody of awesome heroes such as Batman, Green Hornet and The Shadow, but unlike the former Darkwing Duck, he has a strong desire for fame and attention, a desire he often has to combat in order to stay heroic. His adopted daughter named Gosalyn Mallard, his sidekicks, Launchpad McQuack, and sometimes, Honker Muddlefoot, and his girlfriend, Morgana, help him in many adventures. Darkwing Duck begins to learn what being a true hero is all about.</background>
+		<strengths>Launchpad is Darkwing's best friend and sidekick. When they first met, Launchpad revealed that he is his biggest fan and he offered him to be his sidekick, they were chasing Taurus Bulba's henchmen but they failed and Darkwing refused Launchpad's offer. However, after Launchpad saved Darkwing from prison, Darkwing acceted him as his sidekick and now he is helping him with his chores and crime fighting. In "Water Way to Go" Darkwing made Launchpad his partner (but it's not official since Launchpad keeps referring to himself as Darkwing's sidekick). In "A Duck by Any Other Name" Darkwing is upset and jelaous that St. Canard thinks that Launchpad is Darkwing, however Launchpad is trying to prove them that they are wrong. Darkwing doesn't likes Launchpad's stupidity but he likes his potential.</strengths>
+		<weaknesses>Megavolt is Darkwing's archenemy, they have a strong enemyship. In "Clash Reunion" he is the first supervillain Darkwing ever faced, Darkwing/Drake is shocked when he finds out that Megavolt was his classmate Elmo Sputterspark. Despite their differences, Megavolt has been teaming up with Darkwing in the episodes: "Twitching Channels", "Stressed to Kill", "Jail Bird", "Negaduck" and "The Frequency Fiends", but only in "Stressed to Kill" and "The Frequency Fiends" Megavolt didn't tricked Darkwing Duck. In "The Frequency Fiends", Darkwing told Megavolt that he is his archenemy which made Megavolt flattered.
+ 
+Negaduck is Darkwing Duck's arch-nemesis, evil doppelgänger and evil counterpart. They have strong enemyship since Negaduck is a Darkwing Duck from alternate universe, however Darkwing is always able to spoil Negaduck's plans. Darkwing hates when Negaduck frames him by disguising as Darkwing Duck. His enemyship with Negaduck is the same as Megavolt's.</weaknesses>
+	</employee>
+	<employee>
+		<employeeCode>ITXX-08</employeeCode>
+		<name>Hellcat</name>
+		<signatureDate>23.8.2022</signatureDate>
+		<dateOfBirth>04.02.1977</dateOfBirth>
+		<sex>F</sex>
+		<bloodType>AB</bloodType>
+		<height>176 cm</height>
+		<weight>72 kg</weight>
+		<rank>Lead Data Analyst</rank>
+		<securityAccessLevel>A</securityAccessLevel>
+		<department>System Center Department</department>
+		<background>Patricia "Patsy" Walker was a celebrity thanks to her mother's comic book series centered around her, and was living a model life with a husband who she had a crush on since high school, and money without hassle. But thanks to a particularly nasty divorce, she decided that her passion resided elsewhere from the typical household life, and with assistance from Beast scoured the streets as the crime-fighting vigilante known as Hellcat</background>
+		<strengths>Superhuman Physical Characteristics, Acrobatics, Martial Arts, Vehicular Mastery, Extrasensory Perception, Telekinesis and Cloth Manipulation for her costume. Resistance to Mind Manipulation, Illusion Creation and Magic
+ 
+Attack Potency: Small Building level (Has the same source of strength as the Cat. Shown to be on par with Daredevil), Solar System level with Psychokinetic Blasts (Knocks out characters such as the Blob and Hercules)
+ 
+Speed: Massively Hypersonic+ (Comparable to Tigra and Daredevil)</strengths>
+		<weaknesses>She cannot consciously control her mental powers, which only activate in near-death scenarios outside of her control. Extensive use of them will give her a mild migraine.</weaknesses>
+	</employee>
+	<employee>
+		<employeeCode>ITXX-09</employeeCode>
+		<name>Judge Dredd</name>
+		<signatureDate>23.8.2022</signatureDate>
+		<dateOfBirth>2066</dateOfBirth>
+		<sex>M</sex>
+		<bloodType>A++</bloodType>
+		<height>183 cm</height>
+		<weight>90 kg</weight>
+		<rank>Lead Data Analyst</rank>
+		<securityAccessLevel>A</securityAccessLevel>
+		<department>System Center Department</department>
+		<background>Judge Joe Dredd is the Law. He’s a big muscular man, with a large pugnacious jaw, and a habitual scowl; which is the source of his nick-name among the younger judges: “Old Stony Face”.
+ 
+He is never seen out of uniform, or even without his helmet. The uniform is based on a black skin-tight body-suit, of a leather-like synthetic material. Boots, knee-pads and gloves are olive green, and thickly reinforced. At the left shoulder is a large pad, balanced on the right by a stylized eagle. A badge on the left breast bears his name, “Dredd”. A chain hangs in a loop from the badge. A belt, with eagle buckle, carries ammunition, hand-cuffs, etc. Shoulder-pad, eagle, badge, chain and belt are all colored gold, as are his elbow-pads. The helmet is black, with red trim and a darkened visor.</background>
+		<strengths>Helmet MK II: The helmet is made from bonded Kevlar and Plastisteel. Standard Street Judge head gear incorporates a Respirator, Anti-glare Visor and Radio Microphone. Provides Excellent protection vs Physical attacks. Contains sealed systems Respirator gas mask EX (20 minutes of oxygen) , communications radio RM.
+ 
+Armour: The distinctive shoulder, elbow and knee pads of the uniform, along with a Judge’s badge, are advanced armour components, designed to act as symbols of office but also to provide much needed protection. Made from a mixture of Plasteen and foamed Kevlar, the armour components are light, do not inhibit movement and offer optimum protection without burdening the judge. Provides Excellent protection vs Physical Attacks and Good vs Energy Attacks.
+ 
+Gloves and Boots: Reinforced to allow +1CS to blunt damage attacks for slugfest.
+ 
+Body Suit Uniform: Plasteen-Kevlar fabric; Good vs physical and energy.
+ 
+Lawgiver MK II (Gun): Standard issue to all Mega City One Judges. Self Destructive Charge: The Law Giver MK II is DNA coded so that if it detects an unfamiliar handprint from the highly sensitive ultrasonic palm scanner set in the pistol grip (on either side, to allow left or right-handed firing) scans the user’s hand print every time the Lawgiver is fired, the scanner is powerful enough to penetrate any standard glove. If the scanned hand print does not match that of the owning judge, or is unreadable, the Lawgiver on board computer will automatically detonate the high explosive charge also set within the grip when the trigger is pulled: Remarkable damage (possible Kill).</strengths>
+		<weaknesses>Mega-City One, where crime runs riot. This urban sprawl is home to 400 million citizens, everyone a potential criminal. The city is spread down the Eastern coast of what was once the United States of America. Unemployment is endemic, boredom is universal and only the Judges can prevent total anarchy. As Judge, jury and executioner, Joe Dredd is empowered to dispense instant justice. When it comes to crushing crime, Judge Dredd invented zero tolerance.
+ 
+Joseph Dredd and his brother, Rico, were cloned from the bloodline of Judge Fargo in 2066. They both grew up in the Academy of Law and soon proved to be two of the finest cadet Judges in Mega-City One history. Nevertheless, Joe was always marginally behind his brother when it came to skill and achievement throughout their training, although Rico's extra flair came with a fatal flaw in his personality. After their graduation with honors in 2079 Joe found out about some illegal sidelines that Rico had set-up for himself. Joe was forced to arrest his own brother and have him sent to Titan, and it was only then that the Justice Department realised what a special Judge they had in Dredd.
+ 
+Dredd soon achieved the status of Senior Judge and rapidly became not only the most feared and respected Judge in Mega-City One, but also a powerful figurehead for justice in the wild and dangerous world of the 22nd century.</weaknesses>
+	</employee>
+</personnelRegistry>

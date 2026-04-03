@@ -1,0 +1,19 @@
+<surveillance>
+	<objectNumber>TCL#3</objectNumber>
+	<objectName>T-Veronica</objectName>
+
+	<temperature>
+		<limit>below 12 C</limit>
+		<current>11</current>
+	</temperature>
+
+	<humidity>
+		<limit>below 20 %</limit>
+		<current>20</current>
+	</humidity>
+
+	<lightSensitivity>
+		<limit>below 150 Lumen C</limit>
+		<current>149</current>
+	</lightSensitivity>
+</surveillance>

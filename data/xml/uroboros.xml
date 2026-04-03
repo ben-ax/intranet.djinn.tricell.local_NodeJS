@@ -1,0 +1,19 @@
+<surveillance>
+	<objectNumber>TCL#4</objectNumber>
+	<objectName>Uroboros</objectName>
+
+	<temperature>
+		<limit>below 15 C</limit>
+		<current>13</current>
+	</temperature>
+
+	<humidity>
+		<limit>below 20 %</limit>
+		<current>18</current>
+	</humidity>
+
+	<lightSensitivity>
+		<limit>below 10 Lumen C</limit>
+		<current>7</current>
+	</lightSensitivity>
+</surveillance>

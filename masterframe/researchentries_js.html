@@ -1,0 +1,82 @@
+<script language="JavaScript">
+
+function submitEntry()
+{
+    //Tar fram virus id
+    const currentURL = window.location.href;
+    const splitUrl = currentURL.split("/");
+    const id = splitUrl[splitUrl.length - 1];
+
+    // Get base URL dynamically
+    const baseUrl = window.location.protocol + "//" + window.location.host;
+
+    //Form check
+    if(document.entryForm.newEntry.value != "" && document.entryForm.entryHeadingInput.value != "")
+    {
+        var http = new XMLHttpRequest();
+        http.open("POST", baseUrl + "/api/entries/"+id+"", true);
+        http.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        var params = "entryHeading=" + document.getElementById('entryHeadingInput').value +"&entryText=" + document.getElementById('newEntry').value;
+        http.send(params);
+
+        http.onload = function() 
+        {
+            refreshEntry();
+            document.getElementById("entryHeadingInput").value = "";
+            document.getElementById("newEntry").value = "";
+        }
+    }
+    else
+    {
+        alert("Cant leave an empty research entry");
+    }
+}
+</script>
+
+<script language="JavaScript">
+function deleteEntry(id)
+{
+    // Get base URL dynamically
+    const baseUrl = window.location.protocol + "//" + window.location.host;
+    
+    var http = new XMLHttpRequest();
+    http.open("DELETE", baseUrl + "/api/entries/"+id+"", true);
+    http.onload = function()
+    {
+        refreshEntry();
+    }
+    http.send();
+}
+</script>
+
+ <script language="JavaScript">
+    
+    function refreshEntry()
+    {
+        const currentURL = window.location.href;
+        const splitUrl = currentURL.split("/");
+        const id = splitUrl[splitUrl.length - 1];
+        
+        // Get base URL dynamically
+        const baseUrl = window.location.protocol + "//" + window.location.host;
+        
+        const xhttp = new XMLHttpRequest();
+    
+        xhttp.onload = function() 
+        {
+            document.getElementById("pastEntryBox").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", baseUrl + "/api/entries/"+id+"",true);
+        xhttp.send();
+        
+        
+    }
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    refreshEntry();
+    setInterval(function()
+        {refreshEntry();
+            
+        }, 1500);
+});
+</script>

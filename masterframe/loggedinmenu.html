@@ -1,0 +1,173 @@
+<div id="loggedinMenuLayer">
+    <div id="userinfo">
+        <b>User info:</b><br />
+            <p> Employee Code: #{employeecode}</p>
+            <p> Name: #{name} </p>
+            <p> Login times: #{logintimes} </p>
+            <p> Last login: #{lastlogin} </p>
+    </div>
+       
+    <div id="chatbutton" onClick="showChatLayer()" style="cursor:pointer;">Chat <span id="chatnumber"></span></div>
+    <div id="topsecret">
+        <b>TOP SECRET</b><br />MATERIAL
+    </div>
+    <table border="0" cellspacing="0" cellpadding="0"><tr><td height="1" width="150" bgcolor="#003366"></td></tr></table>
+    <div class="loggedinbutton">
+        <a href="javascript:void(0)" onClick="javascript:showCalcLayer();" style="color:#336699;text-decoration:none;">Tricell Calculator</a>
+    </div>
+    <table border="0" cellspacing="0" cellpadding="0"><tr><td height="1" width="150" bgcolor="#003366"></td></tr></table>
+    <div class="loggedinbutton"><a href="http://djinn.tricell.local/api/personnelregistry" style="color:#336699;text-decoration:none;">User Database</a></div>
+    <table border="0" cellspacing="0" cellpadding="0"><tr><td height="1" width="150" bgcolor="#003366"></td></tr></table>
+ 
+    <!-- VIRUS LIVESTREAM BUTTON -->
+    <div class="loggedinbutton">
+        <a href="http://djinn.tricell.local/api/livestream" style="color:#336699;text-decoration:none;">Virus Livestream</a>
+    </div>
+    <table border="0" cellspacing="0" cellpadding="0"><tr><td height="1" width="150" bgcolor="#003366"></td></tr></table>
+ 
+    if securityaccesslevel === 'A' || securityaccesslevel === 'B'
+        <div class="loggedinbutton">
+            <a id="researchDbLink" href="javascript:void(0)" style="color:#aaaaaa;text-decoration:none;cursor:default;">Research Database</a>
+        </div>
+        <div class="loggedinbutton">
+            <a href="/api/activitylog" style="color:#336699;text-decoration:none;">Activity Log</a>
+        </div>
+        <div style="padding:2px 8px 4px 8px;font-size:11px;">
+            <span id="hqDot" style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#cc0000;margin-right:5px;vertical-align:middle;"></span><span id="hqStatusText" style="color:#cc0000;">Not connected</span>
+        </div>
+        <table border="0" cellspacing="0" cellpadding="0"><tr><td height="1" width="150" bgcolor="#003366"></td></tr></table>
+        <div class="loggedinbutton">
+            <a href="javascript:void(0)" onclick="openHQPopup();" style="color:#336699;text-decoration:none;">Connect to HQ</a>
+        </div>
+        <table border="0" cellspacing="0" cellpadding="0"><tr><td height="1" width="150" bgcolor="#003366"></td></tr></table>
+ 
+    - if (securityaccesslevel === "A") {
+    <div class="loggedinbutton">
+        <a href="javascript:void(0)" onClick="showPanicLayer()" style="color:#cc0000;text-decoration:none;">Panic Button</a>
+    </div>
+ 
+    <table border="0" cellspacing="0" cellpadding="0">
+        <tr><td height="1" width="150" bgcolor="#003366"></td></tr>
+    </table>
+    - }
+ 
+    <div class="loggedinbutton">
+        <a href="http://djinn.tricell.local/api/logout" style="color:#336699;text-decoration:none;">Log out</a>
+    </div>
+    <table border="0" cellspacing="0" cellpadding="0"><tr><td height="1" width="150" bgcolor="#003366"></td></tr></table>
+</div>
+ 
+<!-- PANIC LAYER MODAL -->
+<div id="panicLayer">
+    
+    <h2 style="margin-top: 0; font-size: 18px; color: #000;">VARNING!</h2>
+    <p style="margin: 0 0 5px 0; font-size: 14px; color: #333;">This will delete all research material.</p>
+    <p style="margin: 0 0 20px 0; font-size: 14px; color: #333;">This operation is un-reversable.</p>
+    
+    <p style="margin: 0 0 10px 0; font-size: 14px; color: #333;">To proceed enter Panic Code:</p>
+    
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+        <label for="paniccode" style="margin-right: 10px; font-size: 14px; color: #333;">Code:</label>
+        <input type="password" id="paniccode" style="width: 150px; padding: 4px; border: 1px solid #000; box-sizing: border-box;">
+    </div>
+    
+    <div style="text-align: center;">
+        <button class="panicbutton" onClick="submitPanic()">Panic</button>
+        <button class="panicbutton" onClick="showPanicLayer()">Cancel</button>
+    </div>
+    
+    <div id="panicresult"></div>
+</div>
+ 
+<div id="hqPopup" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:100;background:#ffffff;border:2px solid #003366;width:360px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.3);font-family:monospace;">
+    <div style="font-weight:bold;font-size:13px;color:#003366;margin-bottom:16px;letter-spacing:2px;">[ TRICELL HQ — SECURE CONNECT ]</div>
+    <div id="hqChecklist" style="font-size:11px;color:#000000;line-height:2;">
+        <div id="hqStep0">&#9633; Checking server up-status...</div>
+        <div id="hqStep1">&#9633; Loading connection bootstrap...</div>
+        <div id="hqStep2">&#9633; Starting encryption engine...</div>
+        <div id="hqStep3">&#9633; Creating VPN-tunnel...</div>
+        <div id="hqStep4">&#9633; Checking credentials...</div>
+        <div id="hqStep5">&#9633; Loading database handshake...</div>
+        <div id="hqStep6">&#9633; Try/catch connecting...</div>
+        <div id="hqStep7">&#9633; Checking connection status...</div>
+    </div>
+    <div id="hqDoneMsg" style="display:none;margin-top:14px;color:#2a7a2a;font-size:12px;font-weight:bold;letter-spacing:1px;">You are connected</div>
+</div>
+ 
+script.
+    function openHQPopup() {
+        var popup = document.getElementById('hqPopup');
+        popup.style.display = 'block';
+        var steps = 8;
+        for (var i = 0; i < steps; i++) {
+            (function(idx) {
+                setTimeout(function() {
+                    document.getElementById('hqStep' + idx).style.color = '#66bb66';
+                    document.getElementById('hqStep' + idx).innerHTML = '&#10003; ' + document.getElementById('hqStep' + idx).innerText.replace('□ ', '');
+                    if (idx === steps - 1) {
+                        document.getElementById('hqDoneMsg').style.display = 'block';
+                        setTimeout(connectToHQ, 900);
+                    }
+                }, idx * 400);
+            })(i);
+        }
+    }
+    function connectToHQ() {
+        document.getElementById('hqPopup').style.display = 'none';
+        for (var i = 0; i < 8; i++) { document.getElementById('hqStep' + i).style.color = '#000000'; }
+        document.getElementById('hqDoneMsg').style.display = 'none';
+        document.getElementById('hqDot').style.background = '#2a7a2a';
+        document.getElementById('hqStatusText').style.color = '#2a7a2a';
+        document.getElementById('hqStatusText').innerText = 'Connected';
+        var link = document.getElementById('researchDbLink');
+        link.href = 'http://djinn.tricell.local/api/virusdatabase';
+        link.style.color = '#336699';
+        link.style.cursor = 'pointer';
+    }
+ 
+<div id="chatLayer">
+    <div id="chatLayerTitle">Tricell Chat <span style="float:right;cursor:pointer;" onClick="showChatLayer()">X</span></div>
+    <div id="chatLayerMessages"></div>
+    <input type="text" id="chatmessage" placeholder="Type a message..." onkeydown="if(event.key==='Enter'){submitChat();refreshChat();}" />
+    <button id="chatSendButton" onClick="submitChat();refreshChat();">Send</button>
+</div>
+<div id="calcLayer">
+    <h3>Tricell Calculator</h3>
+    <form name="calc">
+    <table id="calculator">
+     <tr>
+     <td class="calccell" colspan="4"><input class="calcdisplay" type="text" name="display" /></td>
+     </tr>
+     <tr>
+     <td class="calccell"><input class="calcbutton" type="button" value="C" onClick="resetDisplay()" /></td>
+     <td></td>
+     <td></td>
+     <td class="calccell"><input class="calcbutton" type="button" value="/" onClick="calc.display.value+='/'"></td>
+     </tr>
+     <tr>
+     <td class="calccell"><input class="calcbutton" type="button" value="7" onClick="updateDisplay('7')" /></td>
+     <td class="calccell"><input class="calcbutton" type="button" value="8" onClick="updateDisplay('8')" /></td>
+     <td class="calccell"><input class="calcbutton" type="button" value="9" onClick="updateDisplay('9')" /></td>
+     <td class="calccell"><input class="calcbutton" type="button" value="*" onClick="updateDisplay('*')" /></td>
+     </tr>
+     <tr>
+     <td class="calccell"><input class="calcbutton" type="button" value="4" onClick="updateDisplay('4')" /></td>
+     <td class="calccell"><input class="calcbutton" type="button" value="5" onClick="updateDisplay('5')" /></td>
+     <td class="calccell"><input class="calcbutton" type="button" value="6" onClick="updateDisplay('6')" /></td>
+     <td class="calccell"><input class="calcbutton" type="button" value="-" onClick="updateDisplay('-')" /></td>
+     </tr>
+     <tr>
+     <td class="calccell"><input class="calcbutton" type="button" value="1" onClick="updateDisplay('1')" /></td>
+     <td class="calccell"><input class="calcbutton" type="button" value="2" onClick="updateDisplay('2')" /></td>
+     <td class="calccell"><input class="calcbutton" type="button" value="3" onClick="updateDisplay('3')" /></td>
+     <td class="calccell"><input class="calcbutton" type="button" value="+" onClick="updateDisplay('+')" /></td>
+     </tr>
+     <tr>
+     <td class="calccell"><input class="calcbutton" type="button" value="0" onClick="updateDisplay('0')" /></td>
+     <td></td>
+     <td></td>
+     <td class="calccell"><input class="calcbutton" type="button" value="=" onClick="calculate()" /></td>
+     </tr>
+    </table>
+    </form>
+</div>

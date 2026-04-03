@@ -1,0 +1,170 @@
+<h1>Add New Employee</h1>
+
+<form name="newemployeeform" action="/api/editemployee/!{id}" onSubmit="return formCheckNewEmployee()" method="post" enctype="multipart/form-data">
+<input type="hidden" name="MAX_FILE_SIZE" value="50000000" />
+<input type="hidden" name="fsignaturedate" value="" />
+
+<!-- Mellan-tabell start -->
+<table id="infomiddle">
+<tr>
+<td width="166" valign="top">
+
+<!-- Inre-tabell Foto start -->
+<table id="photocol">
+<tr>
+<td id="photobox">
+	<img src="!{photo}" alt="Default Photo" width="164" /><br /><label class="file-upload"><input type="file" name="ffile" id="ffile"  /></label></td>
+</tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td id="employeecode">EMPLOYEE CODE: </b><br /><input type="text" name="femployeecode" id="femployeecode" size="7" maxlength="7" value="!{employeecode}"/></td>
+</tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td id="securitylevel">SECURITY CLEARANCE LEVEL: </b><br />
+	<select class="select" name="fsecurityaccess" id="fsecurityaccess">
+	
+<!--<option value="C">C</option>-->
+<!--<option value="B">B</option>-->
+<!--<option value="A">A</option>-->
+
+- var temp = ""
+if(securityaccesslevel=="C")
+	option(value="C", selected="selected") C
+else
+	option(value="C") C
+
+if(securityaccesslevel === "B")
+	option(value="B", selected="selected") B
+else
+	option(value="B") B
+
+if(securityaccesslevel === "A")
+	option(value="A", selected="selected") A
+else
+	option(value="A") A
+	
+	</select>
+</td>
+</tr>
+</table>
+<!-- Inre-tabell Foto slut -->
+
+</td>
+<td width="135" valign="top">
+
+<!-- Inre-tabell Variabler start -->
+<table>
+<tr>
+<td class="variablecol">NAME: &nbsp;</td>
+</tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="variablecol">DATE OF BIRTH: &nbsp;</td>
+</tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="variablecol">SEX: &nbsp;</td>
+</tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="variablecol">BLOOD TYPE: &nbsp;</td>
+</tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="variablecol">HEIGHT: &nbsp;</td>
+</tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="variablecol">WEIGHT: &nbsp;</td>
+</tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="variablecol">DEPARTMENT: &nbsp;</td>
+</tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="variablecol">RANK: &nbsp;</td>
+</tr>
+<tr><td class="tablespacer"></tr>
+</table>
+<!-- Inre-tabell Variabler slut -->
+
+</td>
+<td width="245" valign="top">
+
+<!-- Inre-tabell Värden slut -->
+<table>
+<tr>
+<td class="valuecol"><input type="text" name="fname" id="fname" size="20"  maxlength="255" value="!{name}" /></td>
+</tr>
+<tr><td class="blackline"></td></tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="valuecol"><input type="date" name="fdateofbirth" id="fdateofbirth" size="20" maxlength="11" value="!{dateofbirth}" /></td>
+</tr>
+<tr><td class="blackline"></td></tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="valuecol">
+	<select class="select" name="fsex" id="fsex">
+	<option value="Male" selected="selected">Male</option>
+	<option value="Female">Female</option>
+	<option value="Other">Other</option>
+	</select>
+</td>
+</tr>
+<tr><td class="blackline"></td></tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="valuecol"><input type="text" name="fbloodtype" id="fbloodtype" size="7" maxlength="4" value="!{bloodtype}" /></td>
+</tr>
+<tr><td class="blackline"></td></tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="valuecol"><input type="text" name="fheight" id="fheight" size="7"  maxlength="7" value="!{height}" /></td>
+</tr>
+<tr><td class="blackline"></td></tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="valuecol"><input type="text" name="fweight" id="fweight" size="7"  maxlength="7" value="!{weight}" /></td>
+</tr>
+<tr><td class="blackline"></td></tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="valuecol"><input type="text" name="fdepartment" id="fdepartment" size="20" maxlength="255" value="!{department}"/></td>
+</tr>
+<tr><td class="blackline"></td></tr>
+<tr><td class="tablespacer"></tr>
+<tr>
+<td class="valuecol"><input type="text" name="frank" id="frank" size="20" maxlength="255" value="!{rank}" /></td>
+</tr>
+<tr><td class="blackline"></td></tr>
+<tr><td class="tablespacer"></tr>
+</table>
+<!-- Inre-tabell Värden slut -->
+
+<td width="182" valign="top">
+
+<!-- Inre-tabell Tom start -->
+<!-- Inre-tabell Tom slut -->
+
+</td>
+</tr>
+</table>
+<!-- Mellan-tabell slut -->
+
+
+<br /><p />
+<h1>Background:</h1>
+<textarea rows="5" cols="45" name="fbackground" id="fbackground" wrap="off">!{background}</textarea>
+<p />
+<h1>Strengths:</h1>
+<textarea rows="5" cols="45" name="fstrengths" id="fstrengths" wrap="off">!{strengths}</textarea>
+<p />
+<h1>Weaknesses:</h1>
+<textarea rows="5" cols="45" name="fweaknesses" id="fweaknesses" wrap="off">!{weaknesses}</textarea>
+<p />
+<input type="submit" class="button" value="Edit Employee" /><input class="button" type="reset" value="Reset Form" />
+<p />
+</form>
