@@ -104,33 +104,33 @@ router.get('/', async (request, response) => {
     <div id="table-resp">
         <div id="table-header">
             <div class="table-header-cell-light">Username</div>
-            <div class="table-header-cell-dark">Full Name</div>
-            <div class="table-header-cell-light">Level</div>
-            <div class="table-header-cell-light">Status</div>
+            <div class="table-header-cell-dark">Employee Name</div>
+            <div class="table-header-cell-light">Login Times</div>
+            <div class="table-header-cell-light">Last Login</div>
+            <div class="table-header-cell-light">Lockout</div>
             <div class="table-header-cell-light" style="text-align:center;">Edit</div>
-            <div class="table-header-cell-light" style="text-align:center;">Del</div>
+            <div class="table-header-cell-light" style="text-align:center;">Delete</div>
         </div>
         <div id="table-body">`;
 
     try {
-        // Hämta data genom att joina users (inloggning) och employee (profilnamn/nivå)
+        // Hämta data från users och employee tabeller, nära dina kolumner
         const result = await connection.query(`
-            SELECT users.employeeCode, employee.[name], employee.securityAccessLevel, users.lockout 
-            FROM users LEFT JOIN employee ON users.employeeCode = employee.employeeCode`);
+            SELECT u.employeeCode, e.[name], u.logintimes, u.lastlogin, u.lockout
+            FROM users u
+            LEFT JOIN employee e ON u.employeeCode = e.employeeCode`);
 
-        for(let user of result) {
-            let lvlStyle = user.securityAccessLevel === 'A' ? "color:red; font-weight:bold;" : "";
-            
-            // STATUS-LOGIK: Vi kollar om lockout inte är 0, null eller false (Access sparar True som -1)
+        for (let user of result) {
             let isLocked = (user.lockout != null && user.lockout != 0 && user.lockout != false && String(user.lockout).toLowerCase() !== 'false');
-            let statusText = isLocked ? "<b style='color:red'>LOCKED</b>" : "Active";
-            
+            let lockoutText = isLocked ? "LOCKED" : "Active";
+
             htmlOutput += `
             <div class="resp-table-row">
                 <div class="table-body-cell">${user.employeeCode}</div>
                 <div class="table-body-cell-bigger">${user.name || '<i>No name set</i>'}</div>
-                <div class="table-body-cell" style="${lvlStyle}">${user.securityAccessLevel || 'C'}</div>
-                <div class="table-body-cell">${statusText}</div>
+                <div class="table-body-cell">${user.logintimes || '0'}</div>
+                <div class="table-body-cell">${user.lastlogin || '-'}</div>
+                <div class="table-body-cell">${lockoutText}</div>
                 <div class="table-body-cell" style="text-align:center;">
                     <a href="/api/userdatabase/edit/${user.employeeCode}" style="color:#0056b3; font-weight:bold; text-decoration:none;">[E]</a>
                 </div>

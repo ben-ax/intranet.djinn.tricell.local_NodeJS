@@ -1,14 +1,19 @@
-/* Kalk
-/* ----------------------------- 3:rd party-moduler------------------------------ */
+﻿/* -----------------------------create kalkylator------------------------------ */
+/* ----------------------------- 3:rd party-moduler ------------------------------ */
 const config = require('./config/globals.json');
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
-const app = express();                  /* Skapa webbserver-objektet */
+const app = express(); 
+app.set('trust proxy', true);      
 
-
+app.use((req, res, next) => {
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    next();
+});
 app.use(express.static('./public'));    /* Skapa global path till "public"-mappen */
+app.use('/attachments', express.static('./data')); /* Serve attachments from data folder */
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -34,7 +39,7 @@ const pug_loggedinmenu = pug.compileFile('./masterframe/loggedinmenu.html');
 /* ------------------------------ Egna moduler ----------------------------------- */
 const readHTML = require('./readHTML.js');
 
-/* Läs respektive HTML-text-sida för Masterframen */
+/* L�s respektive HTML-text-sida f�r Masterframen */
 var htmlHead = readHTML('./masterframe/head.html');
 var htmlHeader = readHTML('./masterframe/header.html');
 var htmlMenu = readHTML('./masterframe/menu.html');
@@ -44,7 +49,7 @@ var htmlInfoStop = readHTML('./masterframe/infoStop.html');
 var htmlFooter = readHTML('./masterframe/footer.html');
 var htmlBottom = readHTML('./masterframe/bottom.html');
 
-/* ------------- Skapa routes för de alternativa rutterna i webbapplikationen ------------------------- */
+/* ------------- Skapa routes f�r de alternativa rutterna i webbapplikationen ------------------------- */
 const info = require('./routes/info');
 const personnelregistry = require('./routes/personnelregistry');
 const login = require('./routes/login');
@@ -61,10 +66,10 @@ const editVirusImageRouter = require('./routes/editvirusimage');
 const activityLogRouter = require('./routes/activityLog');
 const panic = require('./routes/panic');
 
-//  Livestream router 
+// ~ Livestream router 
 const livestream = require('./routes/livestream.js');
 
-/* -------------- Skapa default-router --------------------- */
+/* -------------- Skapa default-router (om ingen under-s�kv�g anges av anv�ndaren) --------------------- */
 app.get('/', function(request, response)
 {
     response.setHeader('Content-type','text/html');

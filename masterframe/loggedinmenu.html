@@ -16,12 +16,12 @@
         <a href="javascript:void(0)" onClick="javascript:showCalcLayer();" style="color:#336699;text-decoration:none;">Tricell Calculator</a>
     </div>
     <table border="0" cellspacing="0" cellpadding="0"><tr><td height="1" width="150" bgcolor="#003366"></td></tr></table>
-    <div class="loggedinbutton"><a href="http://djinn.tricell.local/api/personnelregistry" style="color:#336699;text-decoration:none;">User Database</a></div>
+    <div class="loggedinbutton"><a href="/api/userdatabase" style="color:#336699;text-decoration:none;">User Database</a></div>
     <table border="0" cellspacing="0" cellpadding="0"><tr><td height="1" width="150" bgcolor="#003366"></td></tr></table>
- 
+
     <!-- VIRUS LIVESTREAM BUTTON -->
     <div class="loggedinbutton">
-        <a href="http://djinn.tricell.local/api/livestream" style="color:#336699;text-decoration:none;">Virus Livestream</a>
+        <a href="/api/livestream" style="color:#336699;text-decoration:none;">Virus Livestream</a>
     </div>
     <table border="0" cellspacing="0" cellpadding="0"><tr><td height="1" width="150" bgcolor="#003366"></td></tr></table>
  
@@ -52,7 +52,7 @@
     - }
  
     <div class="loggedinbutton">
-        <a href="http://djinn.tricell.local/api/logout" style="color:#336699;text-decoration:none;">Log out</a>
+        <a href="/api/logout" style="color:#336699;text-decoration:none;">Log out</a>
     </div>
     <table border="0" cellspacing="0" cellpadding="0"><tr><td height="1" width="150" bgcolor="#003366"></td></tr></table>
 </div>
@@ -120,7 +120,7 @@ script.
         document.getElementById('hqStatusText').style.color = '#2a7a2a';
         document.getElementById('hqStatusText').innerText = 'Connected';
         var link = document.getElementById('researchDbLink');
-        link.href = 'http://djinn.tricell.local/api/virusdatabase';
+        link.href = '/api/virusdatabase';
         link.style.color = '#336699';
         link.style.cursor = 'pointer';
     }

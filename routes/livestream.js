@@ -89,11 +89,10 @@ router.get('/', (request, response) => {
                 securityaccesslevel: request.session.securityAccessLevel,
                 webaddress: 'http://djinn.tricell.local',
             }));
-        } else {
-            response.write(htmlMenu);
         }
         
         response.write(htmlHeader);
+        response.write(htmlMenu);
         response.write(htmlInfoStart);
         
         let htmloutput = `

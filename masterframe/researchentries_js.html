@@ -11,7 +11,7 @@ function submitEntry()
     const baseUrl = window.location.protocol + "//" + window.location.host;
 
     //Form check
-    if(document.entryForm.newEntry.value != "" && document.entryForm.entryHeadingInput.value != "")
+    if(document.getElementById('newEntry').value != "" && document.getElementById('entryHeadingInput').value != "")
     {
         var http = new XMLHttpRequest();
         http.open("POST", baseUrl + "/api/entries/"+id+"", true);
@@ -21,9 +21,20 @@ function submitEntry()
 
         http.onload = function() 
         {
-            refreshEntry();
-            document.getElementById("entryHeadingInput").value = "";
-            document.getElementById("newEntry").value = "";
+            try {
+                const res = JSON.parse(http.responseText);
+                if (http.status === 200 && res.success) {
+                    refreshEntry();
+                    document.getElementById("entryHeadingInput").value = "";
+                    document.getElementById("newEntry").value = "";
+                    alert("Entry added successfully! Total entries: " + res.entryCount + ", Last entry: " + res.lastEntryDate);
+                } else {
+                    alert("Error adding entry: " + (res.error || http.responseText));
+                }
+            } catch (err) {
+                alert("Entry added, but could not parse response. Refresh page to see update.");
+                refreshEntry();
+            }
         }
     }
     else

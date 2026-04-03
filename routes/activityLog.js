@@ -40,6 +40,8 @@ function writeCommonHeader(req, res) {
       name: req.cookies.name,
       logintimes: req.cookies.logintimes,
       lastlogin: req.cookies.lastlogin,
+      securityaccesslevel: req.session.securityAccessLevel || 'C',
+      webaddress: 'http://djinn.tricell.local',
     }));
   }
   res.write(htmlHeader);
@@ -80,21 +82,33 @@ router.get('/', async (req, res) => {
 
     result = await connection.query(sql);
 
-    // Build HTML (still string-based — consider full Pug template)
+    // HTML output
     let htmlOutput = `
       <link rel="stylesheet" href="css/personnel_registry.css" />
       <script src="./scripts/activitylogsorting.js"></script>
-      <table border="0">
-        <tr>
-          <td width="100px" align="left"><h2>Activity Log</h2></td>
-          <td width="80" align="center"><h2>Sort By:</h2></td>
-          <td width="52" align="left" onclick="sorting(20, '${sortType}')"><a style="text-decoration: none; color: black; cursor: pointer;"><h2><b>20</b></h2></a></td>
-          <!-- ... repeat for 50, 100, 150 ... -->
-          <td width="88" align="center"><h2>Sort By:</h2></td>
-          <td onclick="sorting(${sortAmount}, 'Activity')"><h2><b>Activity</b></h2></td>
-          <!-- ... other sort options ... -->
-        </tr>
-      </table>
+      <style>
+        .filter-container { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+        .show-max-btn { display: inline-block; padding: 4px 10px; margin-right: 8px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; background: white; }
+        .show-max-btn:hover { background: #f0f0f0; }
+        .show-max-btn.active { background: #0078d4; color: white; border-color: #0078d4; }
+        .order-by-select { padding: 6px 12px; border-radius: 4px; border: 1px solid #ccc; }
+      </style>
+      <h2>Activity Log</h2>
+      <div class="filter-container">
+        <div>Show max: 
+          <button class="show-max-btn ${sortAmount == 20 ? 'active' : ''}" onclick="sorting(20, '${sortType}')">20</button>
+          <button class="show-max-btn ${sortAmount == 50 ? 'active' : ''}" onclick="sorting(50, '${sortType}')">50</button>
+          <button class="show-max-btn ${sortAmount == 100 ? 'active' : ''}" onclick="sorting(100, '${sortType}')">100</button>
+          <button class="show-max-btn ${sortAmount == 150 ? 'active' : ''}" onclick="sorting(150, '${sortType}')">150</button>
+        </div>
+        <div>Order by: 
+          <select class="order-by-select" onchange="sorting(${sortAmount}, this.value)">
+            <option value="Activity" ${sortType === 'Activity' ? 'selected' : ''}>Activity</option>
+            <option value="EmployeeCode" ${sortType === 'EmployeeCode' ? 'selected' : ''}>User</option>
+            <option value="Date" ${sortType === 'Date' ? 'selected' : ''}>Date</option>
+          </select>
+        </div>
+      </div>
       <div id="table-resp">
         <div id="table-header">
           <div class="table-header-cell-light">Activity</div>

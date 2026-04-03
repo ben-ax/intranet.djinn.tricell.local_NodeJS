@@ -54,7 +54,7 @@ router.get('/', function(request, response)
             // Öppna employee-tabellen, och ta reda på användarens namn och security access level
             async function sqlQuery2()
             {
-                // FIX: Added the WHERE clause to specifically grab the logged-in user's data!
+                // Läs in variabler från employee-tabellen 
                 const result2 = await connection.query("SELECT * FROM employee WHERE employeeCode='"+employeeid+"'");
                 var str_name = result2[0]['name'];
                 var str_securtyaccesslevel= result2[0]['securityAccessLevel'];    

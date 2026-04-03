@@ -203,10 +203,12 @@ router.get('/', async function(request, response)
             let entryCount = 0;
             let lastEntryDate = '--';
             try {
-                const entryResult = await connection.query('SELECT COUNT(*) as count, MAX(entryDate) as lastDate FROM ResearchEntries WHERE researchObjectId=' + virusList[i].ID);
+                // researchObjectId may be stored as text; use CStr conversion to match ID robustly
+                const entryResult = await connection.query("SELECT COUNT(*) AS entryCount, MAX(entryDate) AS lastDate FROM ResearchEntries WHERE CStr(researchObjectId)='" + virusList[i].ID + "'");
                 if (entryResult.length > 0) {
-                    entryCount = entryResult[0].count || 0;
-                    lastEntryDate = entryResult[0].lastDate || '--';
+                    const row = entryResult[0];
+                    entryCount = (row.entryCount || row.COUNT || row.Expr1000 || 0);
+                    lastEntryDate = (row.lastDate || row.LASTDATE || row.Expr1001 || '--');
                 }
             } catch (entryError) {
                 console.log("Error getting entry count for object " + virusList[i].ID + ":", entryError);
@@ -651,11 +653,11 @@ router.get('/:id', async function(request, response)
                 // Visar Archive/Open-knapp endast för nivå A-användare
                 if (request.session.securityAccessLevel === 'A') {
                     const toggleText = virus.objectStatus === 'archive' ? 'Open Object' : 'Archive Object';
-                    response.write('<button onclick="window.location.href=\'/api/virusdatabase/toggle/' + id + '\'" style="background-color: #ff9800;">' + toggleText + '</button>');
+                    response.write('<button onclick="window.location.href=\'/api/virusdatabase/toggle/' + id + '\'" style="background-color: #336699; color: white;">' + toggleText + '</button>');
                 }
 
                 // Visar Backup-knapp för både nivå A och B
-                response.write('<button onclick="window.location.href=\'/api/virusdatabase/backup/' + id + '\'" style="background-color: #4CAF50; color: white;">Backup</button>');
+                response.write('<button onclick="window.location.href=\'/api/virusdatabase/backup/' + id + '\'" style="background-color: #336699; color: white;">Backup</button>');
                 
                 response.write('</div>');
             }
@@ -688,6 +690,46 @@ router.get('/:id', async function(request, response)
             // Lägg till sektion för forskningsinlägg
             if (request.session.securityAccessLevel === 'A' || request.session.securityAccessLevel === 'B') {
                 response.write(htmlResearchEntries);
+
+                // Attached Documents Section
+                let attachments = [];
+                try {
+                    const files = fs.readdirSync('./data/' + id + '/attachments/');
+                    for (const file of files) {
+                        const stat = fs.statSync('./data/' + id + '/attachments/' + file);
+                        attachments.push({
+                            name: file,
+                            size: (stat.size / 1024).toFixed(0) + ' KB',
+                            date: stat.mtime.toLocaleDateString('en-GB').replace(/\//g, '.') // DD.MM.YYYY
+                        });
+                    }
+                } catch (e) {
+                    // ignore if directory doesn't exist or error
+                }
+
+                if (attachments.length > 0) {
+                    response.write('<h2>Attached Documents</h2>');
+                    response.write('<div id="attachments-list" style="margin-top: 20px;">');
+                    for (const att of attachments) {
+                        response.write(`
+                            <div style="display: flex; align-items: center; padding: 10px; border: 1px solid #ccc; margin-bottom: 5px; background: #f9f9f9;">
+                                <div style="flex: 1;">
+                                    <strong>${att.name}</strong><br>
+                                    <small>Size: ${att.size} | Uploaded: ${att.date}</small>
+                                </div>
+                                <div style="display: flex; gap: 10px; align-items: center;">
+                                    <a href="/attachments/${id}/attachments/${att.name}" target="_blank" style="color: #336699; text-decoration: none;">View</a>
+                                    <a href="/api/data/${id}" style="color: #336699; text-decoration: none;">Add</a>
+                                    <form method="POST" action="/api/data/${id}/delete-file" style="margin: 0;">
+                                        <input type="hidden" name="fileName" value="${att.name}">
+                                        <a href="#" onclick="if(confirm('Delete this attachment?')) this.closest('form').submit(); return false;" style="color: red; text-decoration: none;">Delete</a>
+                                    </form>
+                                </div>
+                            </div>
+                        `);
+                    }
+                    response.write('</div>');
+                }
 
                 // Lägg till sektion för virusbilder (uppladdning och galleri) för auktoriserade användare
                 response.write(getVirusImagesHTML(id));

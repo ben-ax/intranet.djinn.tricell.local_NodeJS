@@ -162,7 +162,7 @@ else
 });
 
 
-// ---------------------- Formulär för att editera person ------------------------------
+// ---------------------- Formulär för att redigera person ------------------------------
 router.get('/:id', (request, response) =>
 {  
     var id = request.params.id;

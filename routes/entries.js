@@ -38,9 +38,20 @@ router.post('/:id', (request, response) =>
         async function sqlQuery()
         {
             // Skriv in nytt meddelande 
-            const result = await connection.execute(`INSERT INTO ResearchEntries (researchObjectId,entryHeading,entryText,entryWriter,entryDate, entryTime)
+            await connection.execute(`INSERT INTO ResearchEntries (researchObjectId,entryHeading,entryText,entryWriter,entryDate, entryTime)
                                                      VALUES ('`+id+`','`+entryHeading+`','`+entryText+`','`+employeeid+`','`+postdate+`','`+posttime+`')`);
-            response.send(""); 
+
+            // Return updated counters for UI
+            const entryResult = await connection.query("SELECT COUNT(*) AS entryCount, MAX(entryDate) AS lastDate FROM ResearchEntries WHERE CStr(researchObjectId)='" + id + "'");
+            let updatedCount = 0;
+            let updatedLast = '--';
+            if (entryResult.length > 0) {
+                const r = entryResult[0];
+                updatedCount = (r.entryCount || r.COUNT || r.Expr1000 || 0);
+                updatedLast = (r.lastDate || r.LASTDATE || r.Expr1001 || '--');
+            }
+
+            response.json({ success: true, entryCount: updatedCount, lastEntryDate: updatedLast });
         }
         sqlQuery();
         
