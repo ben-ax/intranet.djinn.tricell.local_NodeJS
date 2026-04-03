@@ -1,0 +1,252 @@
+        #table {
+            width: 716px;
+            display: table;
+            font-size: 12px;
+            font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+            color: #000000;
+        }
+
+        .infotable {
+            width: 758px;
+            border-collapse: collapse;
+        }
+
+
+        #table-header {
+            display: table-header-group;
+            height: 30px;
+        }
+
+        .table-header-cell-light,
+        .table-header-cell-dark {
+            display: table-cell;
+            border: 1px solid;
+            border-color: #000000;
+            border-collapse: collapse;
+            vertical-align: middle;
+            font-weight: bold;
+        }
+
+        .table-header-cell-light {
+            text-align: center;
+            background-color: #b0dfdf;
+        }
+
+        .table-header-cell-dark {
+            padding: 5px;
+            text-align: left;
+            vertical-align: middle;
+            background-color: #548d8d;
+            font-size: 16px;
+        }
+
+        #table-body {
+            display: table-row-group;
+        }
+
+        .resp-table-row {
+            display: table-row;
+        }
+
+        .table-body-cell,
+        .table-body-cell-bigger {
+            display: table-cell;
+            border: 1px solid;
+            border-color: #000000;
+            border-collapse: collapse;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table-body-cell-bigger {
+            text-align: left;
+            height: 20px;
+            background-color: #cccccc;
+            padding: 5px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .dateTimeCreator {
+            width: 260px;
+            vertical-align: top;
+            text-align: right;
+            padding-right: 10px;
+            font-size: 15px;
+        }
+
+
+        #virus_number {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .metaBox {
+            display: inline-block;
+            text-align: left;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .virusTitle {
+            margin: 0;
+        }
+
+        #virus_name {
+            font-size: 22px;
+            font-weight: normal;
+        }
+
+        .virus_name_box {
+            padding: 10px 10px 0 0;
+            width: 622px;
+        }
+
+        .virusRow {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #548d8d;
+            color: white;
+            text-decoration: none;
+            border: 1px solid #000;
+            font-size: 13px;
+        }
+
+        #objectText {
+            display: block !important;
+            width: 600px;
+            min-height: 100px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #000;
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #000000 !important;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: left;
+            visibility: visible !important;
+            opacity: 1 !important;
+            overflow: visible;
+        }
+
+        #editbutton {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .edit-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #548d8d;
+            color: white !important;
+            text-decoration: none;
+            border: 1px solid #000;
+            font-weight: bold;
+        }
+
+        #sources_container {
+            border: 1px solid #000;
+            padding: 10px;
+            background-color: #fff;
+            width: 630px;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        .source_row {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .source_row:last-child {
+            border-bottom: none;
+        }
+
+        .source_label {
+            font-weight: bold;
+            width: 180px;
+        }
+
+        .source_value {
+            flex-grow: 1;
+            color: #333;
+        }
+
+        .source_size {
+            width: 70px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .source_date {
+            width: 90px;
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .source_icons {
+            display: flex;
+            gap: 5px;
+        }
+
+        .icon_edit,
+        .icon_delete {
+            background-color: #acc666;
+            border: 1px solid #000;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 10px;
+        }
+
+        .edit_input_field {
+            flex-grow: 1;
+            border: 1px inset #ccc;
+            background: #fdfdfd;
+            padding: 3px 5px;
+            font-size: 13px;
+            font-family: Arial, sans-serif;
+        }
+
+
+        input:focus,
+        textarea:focus {
+            outline: 2px solid #548d8d;
+        }
+
+        textarea {
+            resize: vertical;
+            background-color: #fff;
+        }
+
+        .addNewFile {
+            padding-top: 8px;
+            display: flex;
+            justify-content: right;
+        }
+
+        .icon_add_file {
+            margin-left: 2px;
+            font-size: 25px;
+            cursor: pointer;
+            border: 1px #000 solid;
+            border-radius: 6px;
+        }
